@@ -1,0 +1,21 @@
+td {
+
+	text-align: center;
+	border: 1px solid gray;
+}
+tr {
+	text-align: center;
+	border: 1px solid gray;
+}
+
+th {
+	text-align: center;
+	border: 1px solid gray;
+}
+
+table { 
+	height: 100%; 
+	width: 90%;
+	text-align: center;
+	border: 1px solid gray;
+}
