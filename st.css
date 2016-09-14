@@ -13,7 +13,8 @@ th {
 	border: 1px solid gray;
 }
 
-table { 
+table {
+	margin: auto;
 	height: 100%; 
 	width: 90%;
 	text-align: center;
