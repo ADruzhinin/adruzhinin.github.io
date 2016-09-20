@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang='ru'>
+	<head>
+		<meta charset='utf-8'>
+		<title>
+			Форма
+		</title>
+		<link rel=stylesheet type='text/css' href='reg.css'>
+	</head>
+	<body>
+		<form>
+			<h1><strong>Регистрация</strong></h1>
+			<p>
+				<label for="name">Имя</label>
+				<input type="text" id="name">
+			</p>
+			<p>
+				<label for="surname">Фамилия</label>
+				<input type="text" id="surname">
+			</p>
+			<p>
+				<label for="email">Эл. почта</label>
+				<input type="email" id="email">
+			</p>
+			<p>
+				<label for="password">Пароль</label>
+				<input type="password" id="password">
+			</p>
+			<p>
+				<label for="reppassword">Повторите пароль</label>
+				<input type="password" id="reppassword">
+			</p>
+			<p>
+				<label>Пол</label>
+				<input type="radio" name="sex" value="man">Мужской
+				<input type="radio" name="sex" value="woman">Женский
+			</p>
+			<p>
+				<label for="year">Год рождения</label>
+				<select name="year" size="1" id="year">
+					<option selected disabled value="variant">Выбор...
+					<option value="1996">1996
+					<option value="1995">1995
+					<option value="1994">1994
+					<option value="1993">1993
+					<option value="1992">1992
+					<option value="1991">1991
+					<option value="1990">1990
+					<option value="others">Другой вариант
+				</select>
+			</p>
+			<p>
+				<label for="words">Несколько теплых слов автору</label>
+				<textarea cols="50" rows="5" wrap="soft" id="words"></textarea>
+			</p>
+			<p>
+				<label for="agreement"></label>
+				<input type="checkbox" name="agreement" value="agreement" id="agreement">
+				Я согласен с условиями Алексея Андреевича
+			</p>
+			<p>
+				<button type="reset">Очистить форму</button>
+				<button type="submit" id="register">Зарегистрироваться</button>
+			</p>	
+		</form>
+	</body>
+</html>
