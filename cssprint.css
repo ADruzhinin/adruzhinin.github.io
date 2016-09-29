@@ -1,0 +1,29 @@
+@media print {
+	button, select{
+    	display:none;
+	}
+
+	body {
+    font-family: times;
+    font-size:12pt;
+    background:none;
+	}
+
+	p {
+	    line-height:14pt;
+	    float:none;
+	    width:auto;
+	}
+
+	a { 
+		text-decoration:none
+	}
+
+	a[href]:after {
+    	content:" (" attr(href) ") "; font-size: 90%;
+	}
+
+	a[href^="#"]:after {
+	    content:""
+	}
+}
