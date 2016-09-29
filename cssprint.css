@@ -4,9 +4,10 @@
 	}
 
 	body {
-    font-family: times;
-    font-size:12pt;
-    background:none;
+		color:none;
+	    font-family: times;
+	    font-size:12pt;
+	    background:none;
 	}
 
 	p {
