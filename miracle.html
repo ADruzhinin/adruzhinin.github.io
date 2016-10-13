@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Miracle</title>
+    </head>
+    <body>
+    	<script>
+            var rects = [];
+            var amountRects = 25;
+            var speed = 5;
+            var shiftX = [];
+            var shiftY = [];
+			var coordX = [];
+			var coordY = [];
+    		for (var i = 0; i < amountRects; i++) {
+				rects[i] = document.createElement("div");
+				rects[i].style.background="rgb(" + getRandom(0, 255) + 
+					", " + getRandom(0, 255) + ", "  + getRandom(0, 255) + ")";
+				rects[i].style.position = "absolute";
+				rects[i].style.width = "100px";
+				rects[i].style.height = "100px";
+				coordX[i] = getRandom(0, document.documentElement.clientWidth - 100 - 3) + "px";
+				rects[i].style.left = coordX[i];
+				coordY[i] = getRandom(0, document.documentElement.clientHeight - 100 - 3) + "px";
+				rects[i].style.top = coordY[i];
+				document.body.appendChild(rects[i]);
+				shiftX[i] = getShift();
+				shiftY[i] = getShift();
+			}
+
+            function update() {
+				for (var i = 0; i < amountRects; i++){
+					if (coordX[i] > document.documentElement.clientWidth - 100 - 3) {
+						coordX[i] = document.documentElement.clientWidth - 100 - 3;
+						shiftX[i] = -shiftX[i];
+					} else if (coordX[i] < 0) {
+						coordX[i] = 0;
+						shiftX[i] = -shiftX[i];
+					}
+
+					if (coordY[i] > document.documentElement.clientHeight - 100 - 3) {
+						coordY[i] = document.documentElement.clientHeight - 100 - 3;
+						shiftY[i] = -shiftY[i];
+					} else if (coordY[i] < 0) {
+						coordY[i] = 0;
+						shiftY[i] = -shiftY[i];
+					}
+
+					coordX[i] = parseInt(coordX[i]) + parseInt(shiftX[i]);
+					coordY[i] = parseInt(coordY[i]) + parseInt(shiftY[i]);
+					rects[i].style.top = coordY[i] + "px";
+					rects[i].style.left = coordX[i] + "px";
+				}
+				setTimeout(update, 10);
+			}
+
+            function getRandom(min, max) {
+                return Math.round(Math.random() * (max - min)) + min;
+            }
+            function getShift() {
+				if (Math.random() > 0.5) {
+					return speed;
+				} else { 
+					return -speed;
+				}
+			}
+			update();
+        </script>
+    </body>
+</html>
